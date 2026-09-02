@@ -1,5 +1,70 @@
 # Changelog
 
+## [0.8.0](https://github.com/RusieckiFilip/bnnr/compare/v0.7.3...v0.8.0) (2026-09-02)
+
+
+### Features
+
+* add icd preset for saliency-guided training ([#303](https://github.com/RusieckiFilip/bnnr/issues/303)) ([ba7ba4d](https://github.com/RusieckiFilip/bnnr/commit/ba7ba4d212c03ca15dea671d7d25949342a49d86))
+* **analysis:** AttentionRegime and the attention decision rule ([#432](https://github.com/RusieckiFilip/bnnr/issues/432)) ([6e9561a](https://github.com/RusieckiFilip/bnnr/commit/6e9561afe86b93d85a191ef546c42097421eed0b)), closes [#403](https://github.com/RusieckiFilip/bnnr/issues/403)
+* **analysis:** saliency shape statistics for the attention-regime diagnosis ([#428](https://github.com/RusieckiFilip/bnnr/issues/428)) ([8fc0f25](https://github.com/RusieckiFilip/bnnr/commit/8fc0f253917cbd6c196b7a69518ea7287f990e34)), closes [#402](https://github.com/RusieckiFilip/bnnr/issues/402)
+* analyze progress output and CV cached-pred reuse ([e7d6364](https://github.com/RusieckiFilip/bnnr/commit/e7d636443b556921eecbe3452c35d670a9ba144f))
+* **benchmarks:** expose --fill-strategy sweep and fill-ranking in grand benchmark - T13 ([#377](https://github.com/RusieckiFilip/bnnr/issues/377)) ([e055902](https://github.com/RusieckiFilip/bnnr/commit/e055902197f0232380378dd2926a4f5085382567))
+* bound the XAI cache and stop unbounded hash-keyed growth ([1be85ac](https://github.com/RusieckiFilip/bnnr/commit/1be85ac97de2d4e1d0a9e9594096acee598b0b03))
+* **config:** diagnosis thresholds as config with no defaults ([#433](https://github.com/RusieckiFilip/bnnr/issues/433)) ([d08911b](https://github.com/RusieckiFilip/bnnr/commit/d08911b193590cb3b532a93897723ea9077fb129)), closes [#405](https://github.com/RusieckiFilip/bnnr/issues/405)
+* dashboard port auto-fallback, train --dry-run, config warning echo ([309d1eb](https://github.com/RusieckiFilip/bnnr/commit/309d1ebbaa69bedb41e0e041a38249d4ffad6597))
+* implement real Opti-CAM and split out GradCAMExplainer ([#287](https://github.com/RusieckiFilip/bnnr/issues/287)) ([385aadd](https://github.com/RusieckiFilip/bnnr/commit/385aaddb717f7a325645cc9a9655fa9581c9c302))
+* **reporting:** surface the attention evidence and promote ECE into the table ([#439](https://github.com/RusieckiFilip/bnnr/issues/439)) ([9f33dc8](https://github.com/RusieckiFilip/bnnr/commit/9f33dc8581f0fffc05c7657eb7b85b287739e8e9)), closes [#412](https://github.com/RusieckiFilip/bnnr/issues/412)
+* **training:** CandidateSelector protocol and the SELECTORS registry ([#431](https://github.com/RusieckiFilip/bnnr/issues/431)) ([75c949e](https://github.com/RusieckiFilip/bnnr/commit/75c949ecac28c7b33411ae2a05f5cbaf02fa2a17))
+* **training:** hard_quantile_acc and robustness_gap ([#430](https://github.com/RusieckiFilip/bnnr/issues/430)) ([ce98980](https://github.com/RusieckiFilip/bnnr/commit/ce98980774231a04564c2870a0ef22de00eab793)), closes [#404](https://github.com/RusieckiFilip/bnnr/issues/404)
+* **training:** indistinguishability test for candidate selection ([#437](https://github.com/RusieckiFilip/bnnr/issues/437)) ([b59b4a9](https://github.com/RusieckiFilip/bnnr/commit/b59b4a9c21e802d30295bcb80e5b15a722626811)), closes [#408](https://github.com/RusieckiFilip/bnnr/issues/408)
+* **training:** mandatory run-record fields for selection and compute ([#434](https://github.com/RusieckiFilip/bnnr/issues/434)) ([565a0d1](https://github.com/RusieckiFilip/bnnr/commit/565a0d1e4122ab4fc5fe644b89bec61c94fce5fb)), closes [#410](https://github.com/RusieckiFilip/bnnr/issues/410)
+* **training:** search_policy with exhaustive, diagnosis_single and successive_halving ([#440](https://github.com/RusieckiFilip/bnnr/issues/440)) ([97c80db](https://github.com/RusieckiFilip/bnnr/commit/97c80db18f964f6ca1a4d7b3a9c5189bac46071e))
+* **training:** shadow mode, record the diagnosis evidence without acting on it ([#435](https://github.com/RusieckiFilip/bnnr/issues/435)) ([1b4656c](https://github.com/RusieckiFilip/bnnr/commit/1b4656cd636c5a551aa04f7002cbb4f836e4eab8))
+* warn once when branch search projects a very long runtime ([#318](https://github.com/RusieckiFilip/bnnr/issues/318)) ([0231591](https://github.com/RusieckiFilip/bnnr/commit/02315916aca57ee681bb025b0b98dd65b3a8efd4))
+
+
+### Bug Fixes
+
+* apply augmentations in list order and pass async sample indices ([76ea8d9](https://github.com/RusieckiFilip/bnnr/commit/76ea8d9179a1a59a49e722c728ce385552cef352))
+* **augmentations:** make ChurchNoise the same transform on both paths ([#423](https://github.com/RusieckiFilip/bnnr/issues/423)) ([7241229](https://github.com/RusieckiFilip/bnnr/commit/7241229fd505a72a1ce97d57bc1968f78a1511ad)), closes [#396](https://github.com/RusieckiFilip/bnnr/issues/396)
+* **augmentations:** stop silently destroying normalised batches ([#420](https://github.com/RusieckiFilip/bnnr/issues/420)) ([170666c](https://github.com/RusieckiFilip/bnnr/commit/170666c99ed72cb98e1188f7ce2847e62cb9513e))
+* **cli:** give actionable error when analyze --model is missing ([#360](https://github.com/RusieckiFilip/bnnr/issues/360)) ([880ab68](https://github.com/RusieckiFilip/bnnr/commit/880ab68422e276a8caf6e817935e38a28f8aec16))
+* **config:** deprecate the guessed XAI knobs and stop double-counting accuracy ([#436](https://github.com/RusieckiFilip/bnnr/issues/436)) ([6d9b0e3](https://github.com/RusieckiFilip/bnnr/commit/6d9b0e35c146bf2f1035ecddaecb31a49194a8bd)), closes [#409](https://github.com/RusieckiFilip/bnnr/issues/409)
+* **deps:** floor msgpack&gt;=1.2.1 to patch GHSA-6v7p-g79w-8964 ([#353](https://github.com/RusieckiFilip/bnnr/issues/353)) ([1d90684](https://github.com/RusieckiFilip/bnnr/commit/1d906847dc952887a837ac8cfcf869db525f7b1b))
+* **deps:** require starlette&gt;=1.3.1 to patch four CVEs ([#323](https://github.com/RusieckiFilip/bnnr/issues/323)) ([22cbad2](https://github.com/RusieckiFilip/bnnr/commit/22cbad2c9ee1f998b0c109b0acb1cdfc046aba6d))
+* forbid unknown config keys and enforce epoch bounds ([#297](https://github.com/RusieckiFilip/bnnr/issues/297)) ([985dcc8](https://github.com/RusieckiFilip/bnnr/commit/985dcc87c3ce5dff2ac4c7a2a80091a3e376df5a))
+* implement real local_mean fill in DetectionICD ([#295](https://github.com/RusieckiFilip/bnnr/issues/295)) ([8b72635](https://github.com/RusieckiFilip/bnnr/commit/8b7263583cda364713a796acb6846d615e9a6070)), closes [#255](https://github.com/RusieckiFilip/bnnr/issues/255)
+* invalidate XAI cache when a different model shares the cache dir ([#317](https://github.com/RusieckiFilip/bnnr/issues/317)) ([202e258](https://github.com/RusieckiFilip/bnnr/commit/202e25822bf5b1adc320a1fefabbc7925c7e6e8b))
+* keep canonical augmentation names instead of indexed aliases ([#289](https://github.com/RusieckiFilip/bnnr/issues/289)) ([8e285f9](https://github.com/RusieckiFilip/bnnr/commit/8e285f965585ea45fbb84678cd61c4c077ab4e5c)), closes [#258](https://github.com/RusieckiFilip/bnnr/issues/258)
+* load checkpoints with weights_only=True first ([#298](https://github.com/RusieckiFilip/bnnr/issues/298)) ([233dc36](https://github.com/RusieckiFilip/bnnr/commit/233dc36cfcc201076ff4eac9b683620dea4221e9))
+* make analyze sequential for shuffled val loaders ([#299](https://github.com/RusieckiFilip/bnnr/issues/299)) ([f204f29](https://github.com/RusieckiFilip/bnnr/commit/f204f29451d699a6dea4cb78b5a8db94b293ed57))
+* make ICD/AICD CPU-bound to remove apply_tensor recursion ([#285](https://github.com/RusieckiFilip/bnnr/issues/285)) ([69435d6](https://github.com/RusieckiFilip/bnnr/commit/69435d68c9de17cd3d6bc9f4acbf988f94586881))
+* raise torch floor to 2.10.0 for security fixes ([#293](https://github.com/RusieckiFilip/bnnr/issues/293)) ([76b52bc](https://github.com/RusieckiFilip/bnnr/commit/76b52bc31425f017fe04dbddb2cd78c013393d12))
+* select the best baseline epoch, not the last ([#301](https://github.com/RusieckiFilip/bnnr/issues/301)) ([95b9d8d](https://github.com/RusieckiFilip/bnnr/commit/95b9d8d24cb511ef802e76d3415eb89a0a2865f9))
+* **selection:** scale candidate differences by measurement noise, not by spread ([#438](https://github.com/RusieckiFilip/bnnr/issues/438)) ([7ced1f1](https://github.com/RusieckiFilip/bnnr/commit/7ced1f1436226cc00a967cebc897e3622d6311bc)), closes [#407](https://github.com/RusieckiFilip/bnnr/issues/407)
+* treat winning baseline_reeval as no improvement instead of crashing ([#279](https://github.com/RusieckiFilip/bnnr/issues/279)) ([6ae1512](https://github.com/RusieckiFilip/bnnr/commit/6ae151226989fd19bd4bc9a79c6b292973948b8a))
+* **xai:** honor explicit device on GPU hosts, enforce CPU-only tests ([#358](https://github.com/RusieckiFilip/bnnr/issues/358)) ([7f82a17](https://github.com/RusieckiFilip/bnnr/commit/7f82a176252d0a4f982635bcd37bb6ec5db364b8)), closes [#356](https://github.com/RusieckiFilip/bnnr/issues/356)
+* **xai:** warn when the saliency cache has no sample indices ([#422](https://github.com/RusieckiFilip/bnnr/issues/422)) ([c8cd7ba](https://github.com/RusieckiFilip/bnnr/commit/c8cd7ba7f301df4e80c55ea950a57d94cbed60bb)), closes [#395](https://github.com/RusieckiFilip/bnnr/issues/395)
+
+
+### Performance Improvements
+
+* lazy-import cv2 so import bnnr no longer pays the OpenCV cost ([85f0689](https://github.com/RusieckiFilip/bnnr/commit/85f0689db1804685819ff095e661305c99cb1660))
+
+
+### Documentation
+
+* add branded ICD/AICD figures to README and align tagline ([#282](https://github.com/RusieckiFilip/bnnr/issues/282)) ([7f1e3ea](https://github.com/RusieckiFilip/bnnr/commit/7f1e3ea2405bed36fbf6ddb5b6ebbe9474d4925f))
+* add description for quickstart ([#351](https://github.com/RusieckiFilip/bnnr/issues/351)) ([2549e7d](https://github.com/RusieckiFilip/bnnr/commit/2549e7ddde32e6218a494fb300a5cec8cf339396))
+* add troubleshooting entries for mypy and cuda ([#354](https://github.com/RusieckiFilip/bnnr/issues/354)) ([75ce420](https://github.com/RusieckiFilip/bnnr/commit/75ce420661116c299711c29a61cb61ec876286af))
+* add Windows SSL troubleshooting for CIFAR-10 ([#364](https://github.com/RusieckiFilip/bnnr/issues/364)) ([c573d9c](https://github.com/RusieckiFilip/bnnr/commit/c573d9c9d628c7fd43091e95d3f1e47d84220552))
+* clarify demo shutdown and report dir, linkify next pages ([#381](https://github.com/RusieckiFilip/bnnr/issues/381)) ([40ec3eb](https://github.com/RusieckiFilip/bnnr/commit/40ec3ebc766869c8643843baca6778b9ea4cc5b6))
+* describe what ICD and AICD actually mask, and when each applies ([#424](https://github.com/RusieckiFilip/bnnr/issues/424)) ([ff8af15](https://github.com/RusieckiFilip/bnnr/commit/ff8af151a43c6cafd369d6676d21ca52b428dd58)), closes [#397](https://github.com/RusieckiFilip/bnnr/issues/397)
+* **examples:** add dogs_vs_cats classification config ([4819bc6](https://github.com/RusieckiFilip/bnnr/commit/4819bc6f60e8da03b5642e709f5d138f43145b33))
+* point Colab badges at bnnr-team/bnnr ([#392](https://github.com/RusieckiFilip/bnnr/issues/392)) ([30ad12b](https://github.com/RusieckiFilip/bnnr/commit/30ad12b957e26a26a77df5fb9ea8b3d21487fcd9))
+* sync CLI docs with current help output ([#372](https://github.com/RusieckiFilip/bnnr/issues/372)) ([bd43a0b](https://github.com/RusieckiFilip/bnnr/commit/bd43a0bd3ede5887479a3db71f060393a5f1d55e))
+
 ## [0.7.3](https://github.com/bnnr-team/bnnr/compare/v0.7.2...v0.7.3) (2026-08-26)
 
 
